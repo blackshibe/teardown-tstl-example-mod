@@ -3,7 +3,7 @@ import * as tstl from "typescript-to-lua";
 import * as luamin from "luamin";
 import * as fs from "fs";
 
-var comment = fs.readFileSync("comment.lua");
+var comment = fs.readFileSync("./src/comment.lua");
 const plugin: tstl.Plugin = {
 	beforeEmit(program: ts.Program, options: tstl.CompilerOptions, emitHost: tstl.EmitHost, result: tstl.EmitFile[]) {
 		// Add a comment to the start of all output files

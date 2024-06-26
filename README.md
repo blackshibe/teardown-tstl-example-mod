@@ -6,7 +6,6 @@ This is an example mod for Teardown written in TypeScriptToLua.
 
 -   Install npm
 -   Run `npm i` to update dependencies
--   Run `npm update-transformer` to update the transformer needed for TSTL
 -   Run `npm build` to build the project, or `npm watch` to make it rebuild every time a file changes
 -   Done!
 

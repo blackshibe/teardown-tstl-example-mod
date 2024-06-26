@@ -12,7 +12,7 @@
 		"luaBundle": "main.lua",
 		"noHeader": true,
 		"luaBundleEntry": "src/main.ts",
-		"luaPlugins": [{ "name": "./transformer/fix-first-require/index.js" }]
+		"luaPlugins": [{ "name": "./transformer/index.js" }]
 	},
 	"include": ["src/**/*"]
 }

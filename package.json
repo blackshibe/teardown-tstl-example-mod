@@ -3,7 +3,7 @@
 	"scripts": {
 		"build": "tstl",
 		"watch": "tstl --watch",
-		"update-transformer": "tsc transformer/index.ts --outFile transformer/dist/index.js"
+		"update-transformer": "tsc transformer/index.ts"
 	},
 	"devDependencies": {
 		"typescript-to-lua": "..."
