@@ -6,6 +6,7 @@
 		"update-transformer": "tsc transformer/index.ts"
 	},
 	"devDependencies": {
+		"@types/node": "^20.14.9",
 		"typescript-to-lua": "..."
 	},
 	"dependencies": {

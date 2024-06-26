@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var luamin = require("luamin");
 var fs = require("fs");
-var prefix = fs.readFileSync("./src/prefix.lua");
-var suffix = fs.readFileSync("./src/suffix.lua");
+var prefix = fs.readFileSync("./transformer/lua/prefix.lua");
+var suffix = fs.readFileSync("./transformer/lua/suffix.lua");
 var plugin = {
     beforeEmit: function (program, options, emitHost, result) {
         for (var _i = 0, result_1 = result; _i < result_1.length; _i++) {

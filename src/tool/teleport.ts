@@ -1,11 +1,12 @@
-import { Debug, DebugDomain } from "../util/debug";
+import { Debug, DEBUG_MARKER } from "../util/debug";
 import { TransformUtil } from "../util/transform";
 import { VectorUtil } from "../util/vector";
 
 const MAX_DISTANCE = 500;
 const TIME_TO_TELEPORT = 0.1;
+const SOUNDS = ["asset/sound/haha-1.ogg", "asset/sound/haha-2.ogg", "asset/sound/haha-3.ogg"];
 
-type currentTeleport = {
+type current_teleport = {
 	rotation: TVec;
 	startPosition: TVec;
 	teleportPosition: TVec;
@@ -13,18 +14,23 @@ type currentTeleport = {
 } | null;
 
 export namespace TeleporterTool {
-	let currentTeleport: currentTeleport = null;
+	let current_teleport: current_teleport = null;
+	let teleport_sounds: number[] = [];
 
-	export function init(this: typeof TeleporterTool) {
-		RegisterTool("teleport", "Ts_Teleport", "asset/vox/teleportCube.vox");
+	export function init(this: void) {
+		RegisterTool("teleport", "Teleport Tool", "asset/vox/teleportCube.vox");
 
 		SetBool("game.tool.teleport.enabled", true);
 		SetFloat("game.tool.teleport.ammo", 0);
 
-		DebugPrint(DebugDomain.LOG, "Tool ready");
+		SOUNDS.forEach((element) => {
+			teleport_sounds.push(LoadSound(element, 1));
+		});
+
+		DebugPrint(DEBUG_MARKER + "Tool ready");
 	}
 
-	export function tick(this: typeof TeleporterTool) {
+	export function tick(this: void) {
 		let delta_time: number = GetTimeStep();
 		let player_tool = GetString("game.player.tool");
 		if (player_tool !== "teleport") return;
@@ -33,22 +39,27 @@ export namespace TeleporterTool {
 		let camera_transform = GetCameraTransform();
 
 		// teleporting is smooth and gradual
-		if (currentTeleport) {
+		if (current_teleport) {
 			let step = delta_time / TIME_TO_TELEPORT;
-			currentTeleport.progress += step;
+			let player_transform = GetPlayerTransform(true);
 
-			if (currentTeleport.progress > 1) {
-				currentTeleport = null;
+			current_teleport.progress += step;
+
+			if (current_teleport.progress > 1) {
+				let sound = teleport_sounds[Math.floor(Math.random() * teleport_sounds.length)];
+				PlaySound(sound, current_teleport.teleportPosition, 2, true, 0.9 + Math.random() * 0.2);
+
+				current_teleport = null;
 				return;
 			}
 
 			let position = VectorUtil.lerp(
-				currentTeleport.startPosition,
-				currentTeleport.teleportPosition,
-				currentTeleport.progress
+				current_teleport.startPosition,
+				current_teleport.teleportPosition,
+				current_teleport.progress
 			);
 
-			SetPlayerTransform(Transform(VecAdd(position, Vec(0, 0.1, 0)), camera_transform.rot));
+			SetPlayerTransform(Transform(VecAdd(position, Vec(0, 0.1, 0)), player_transform.rot));
 
 			return;
 		}
@@ -66,9 +77,9 @@ export namespace TeleporterTool {
 
 		if (!InputPressed("lmb")) return;
 
-		currentTeleport = {
+		current_teleport = {
 			rotation: camera_transform.rot,
-			startPosition: GetPlayerTransform().pos,
+			startPosition: GetPlayerTransform(true).pos,
 			teleportPosition: hit_position,
 			progress: 0,
 		};

@@ -1,3 +1,6 @@
+// domains are mostly useless. This is just for visual flare.
+export const DEBUG_MARKER = "[TypeScriptToLuaMod] ";
+
 export namespace Debug {
 	export function box(center: TVec, height: number, width: number, length: number) {
 		let halfHeight = height / 2;
@@ -55,8 +58,4 @@ export namespace Debug {
 			VecAdd(center, Vec(-halfLength, -halfHeight, -halfWidth))
 		);
 	}
-}
-
-export const enum DebugDomain {
-	LOG = "[TypeScriptToLuaMod:LOG]",
 }

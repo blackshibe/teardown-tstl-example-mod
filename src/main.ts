@@ -1,10 +1,7 @@
 import { TeleporterTool } from "./tool/teleport";
-import { DebugDomain } from "./util/debug";
-
-DebugPrint(DebugDomain.LOG, "Connecting events...");
+import { DEBUG_MARKER } from "./util/debug";
 
 export function init() {
-	DebugPrint(DebugDomain.LOG, "Hello world!");
 	TeleporterTool.init();
 }
 
