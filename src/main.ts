@@ -1,14 +1,13 @@
 import { TeleporterTool } from "./tool/teleport";
-import { TeardownBindings } from "./types/events";
+import { DebugDomain } from "./util/debug";
 
-function init() {
-	DebugPrint("[TSTL] Hello world!");
+DebugPrint(DebugDomain.LOG, "Connecting events...");
+
+export function init() {
+	DebugPrint(DebugDomain.LOG, "Hello world!");
 	TeleporterTool.init();
 }
 
-function tick(delta_time: number) {
+export function tick(delta_time: number) {
 	TeleporterTool.tick();
 }
-
-TeardownBindings.ConnectInit(init);
-TeardownBindings.ConnectTick(tick);

@@ -56,3 +56,7 @@ export namespace Debug {
 		);
 	}
 }
+
+export const enum DebugDomain {
+	LOG = "[TypeScriptToLuaMod:LOG]",
+}

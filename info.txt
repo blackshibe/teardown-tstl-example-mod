@@ -1,4 +1,4 @@
-name = TypeScriptToLua Example Mod
+name = Teleporter Mod
 author = blackshibe
 tags = Tool
 description = Test TypeScriptToLua mod for Teardown

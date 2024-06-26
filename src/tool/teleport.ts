@@ -1,4 +1,4 @@
-import { Debug } from "../util/debug";
+import { Debug, DebugDomain } from "../util/debug";
 import { TransformUtil } from "../util/transform";
 import { VectorUtil } from "../util/vector";
 
@@ -21,7 +21,7 @@ export namespace TeleporterTool {
 		SetBool("game.tool.teleport.enabled", true);
 		SetFloat("game.tool.teleport.ammo", 0);
 
-		DebugPrint("[TSTL] Tool ready");
+		DebugPrint(DebugDomain.LOG, "Tool ready");
 	}
 
 	export function tick(this: typeof TeleporterTool) {
