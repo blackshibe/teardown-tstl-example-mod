@@ -3,8 +3,8 @@ import * as tstl from "typescript-to-lua";
 import * as luamin from "luamin";
 import * as fs from "fs";
 
-var prefix = fs.readFileSync("./src/prefix.lua");
-var suffix = fs.readFileSync("./src/suffix.lua");
+var prefix = fs.readFileSync("./transformer/lua/prefix.lua");
+var suffix = fs.readFileSync("./transformer/lua/suffix.lua");
 const plugin: tstl.Plugin = {
 	beforeEmit(program: ts.Program, options: tstl.CompilerOptions, emitHost: tstl.EmitHost, result: tstl.EmitFile[]) {
 		for (const file of result) {
