@@ -1,0 +1,4 @@
+name = TSTL mod
+author = blackshibe
+tags = Gameplay, Vehicle
+description = [noupload]A vehicle framework focusing on realism and ease of use for modders.
