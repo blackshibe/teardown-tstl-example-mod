@@ -1,10 +1,14 @@
+import { TeleporterTool } from "./tool/teleport";
+import { TeardownBindings } from "./types/events";
+
 function init() {
-	DebugPrint("hello world");
+	DebugPrint("[TSTL] Hello world!");
+	TeleporterTool.init();
 }
 
-let a = 1;
-function update() {
-	a *= 1.2;
-
-	DebugPrint(`hello world num ${a}`);
+function tick(delta_time: number) {
+	TeleporterTool.tick();
 }
+
+TeardownBindings.ConnectInit(init);
+TeardownBindings.ConnectTick(tick);
