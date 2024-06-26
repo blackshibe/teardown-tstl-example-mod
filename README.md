@@ -12,6 +12,6 @@ This is an example mod for Teardown written in TypeScriptToLua.
 ## Packaging
 
 -   Run `npm build`
--   Change `transformer/comment.lua` to suit your needs - please publish your work, too! mods make great practice and editing material for new programmers!
+-   Change `transformer/lua/prefix.lua` to include any internal information you want to show to tinkerers - please publish your work, too! mods make great practice and editing material for new programmers.
 -   Copy your assets, `info.txt`, and `main.lua` to a separate folder. any dev related folders like `src` are useless
 -   Publish it. Good luck!
