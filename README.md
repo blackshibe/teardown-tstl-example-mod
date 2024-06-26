@@ -1,9 +1,18 @@
-# Teardown example tstl
+# [Teardown TypeScriptToLua Example Teleporter Mod](https://github.com/blackshibe/teardown-tstl-example-mod)
 
-This is an example mod for Teardown written in ts-to-lua.
+This is an example mod for Teardown written in TypeScriptToLua.
 
 ## Running the project
 
 -   Install npm
--   run `npm start` in your terminal
--   the mod will be built into `bundle`. You may use a symlink (or shortcut) to link the folder in the repository and the folder where the mod needs to be to appear in-game.
+-   Run `npm i` to update dependencies
+-   Run `npm update-transformer` to update the transformer needed for TSTL
+-   Run `npm build` to build the project, or `npm watch` to make it rebuild every time a file changes
+-   Done!
+
+## Packaging
+
+-   Run `npm build`
+-   Change `transformer/comment.lua` to suit your needs - please publish your work, too! mods make great practice and editing material for new programmers!
+-   Copy your assets, `info.txt`, and `main.lua` to a separate folder. any dev related folders like `src` are useless
+-   Publish it. Good luck!

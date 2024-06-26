@@ -2,9 +2,14 @@
 	"private": true,
 	"scripts": {
 		"build": "tstl",
-		"start": "tstl --watch"
+		"watch": "tstl --watch",
+		"update-transformer": "tsc transformer/index.ts --outFile transformer/dist/index.js"
 	},
 	"devDependencies": {
 		"typescript-to-lua": "..."
+	},
+	"dependencies": {
+		"fs": "^0.0.1-security",
+		"luamin": "^1.0.4"
 	}
 }

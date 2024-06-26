@@ -1,4 +1,4 @@
-name = Typescript Teardown Mod
+name = TypeScriptToLua Example Mod
 author = blackshibe
 tags = Tool
-description = Test TSTL Typescript mod for Teardown
+description = Test TypeScriptToLua mod for Teardown

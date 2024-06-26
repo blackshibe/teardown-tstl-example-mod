@@ -1,4 +1,4 @@
-# transformers
+# Teardown TSTL Transformer
 
 -   fix-first-require
     -   Compile via `tsc transformer/fix-first-require/index.ts`
