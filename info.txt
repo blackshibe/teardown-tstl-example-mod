@@ -1,4 +1,4 @@
-name = TSTL mod
+name = Typescript Teardown Mod
 author = blackshibe
-tags = Gameplay, Vehicle
-description = [noupload]A vehicle framework focusing on realism and ease of use for modders.
+tags = Tool
+description = Test TSTL Typescript mod for Teardown
