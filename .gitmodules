@@ -1,3 +1,6 @@
 [submodule "teardown-tstl-typings"]
 	path = teardown-tstl-typings
 	url = https://github.com/blackshibe/teardown-tstl-typings
+[submodule "src/types"]
+	path = src/types
+	url = https://github.com/blackshibe/teardown-tstl-typings
