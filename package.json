@@ -1,9 +1,10 @@
 {
 	"private": true,
 	"scripts": {
-		"build": "tstl",
-		"watch": "tstl --watch",
-		"update-transformer": "tsc transformer/index.ts"
+		"watch-main": "tstl --luaBundle main.lua --luaBundleEntry src/main.ts --watch",
+		"watch-options": "tstl --luaBundle options.lua --luaBundleEntry src/options.ts --watch",
+		"update-transformer": "tsc transformer/index.ts",
+		"build": "tstl --luaBundle main.lua --luaBundleEntry src/main.ts && tstl --luaBundle options.lua --luaBundleEntry src/options.ts"
 	},
 	"devDependencies": {
 		"@types/node": "^20.14.9",

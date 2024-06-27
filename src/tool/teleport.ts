@@ -3,11 +3,10 @@ import { TransformUtil } from "../util/transform";
 import { VectorUtil } from "../util/vector";
 
 const MAX_DISTANCE = 500;
-const TIME_TO_TELEPORT = 0.1;
+const TIME_TO_TELEPORT = 0.25;
 const SOUNDS = ["asset/sound/haha-1.ogg", "asset/sound/haha-2.ogg", "asset/sound/haha-3.ogg"];
 
 type current_teleport = {
-	rotation: TVec;
 	startPosition: TVec;
 	teleportPosition: TVec;
 	progress: number;
@@ -78,7 +77,6 @@ export namespace TeleporterTool {
 		if (!InputPressed("lmb")) return;
 
 		current_teleport = {
-			rotation: camera_transform.rot,
 			startPosition: GetPlayerTransform(true).pos,
 			teleportPosition: hit_position,
 			progress: 0,

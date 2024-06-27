@@ -5,13 +5,14 @@
 		"lib": ["ESNext"],
 		"moduleResolution": "Node",
 		"types": ["@typescript-to-lua/language-extensions"],
-		"strict": true
+		"strict": true,
+		"jsx": "react",
+		"jsxFactory": "TeardownJsx.createElement"
 	},
 	"tstl": {
+		// bundling options are defined via CLI
 		"luaTarget": "5.1",
-		"luaBundle": "main.lua",
 		"noHeader": true,
-		"luaBundleEntry": "src/main.ts",
 		"luaPlugins": [{ "name": "./transformer/index.js" }]
 	},
 	"include": ["src/**/*"]

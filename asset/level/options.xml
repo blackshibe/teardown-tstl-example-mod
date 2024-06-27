@@ -1,0 +1,5 @@
+<scene version="1.3.0" shadowVolume="0 0 0">
+<body pos="0.0 6.4 -100.0"/>
+<script file="MOD/main.lua"/>
+<spawnpoint/>
+</scene>

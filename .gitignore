@@ -4,6 +4,7 @@ package-lock.json
 
 # bundle output
 main.lua
+options.ts
 
 # built transformer
 transformer/dist/*

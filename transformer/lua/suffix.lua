@@ -6,7 +6,11 @@
 	* It loads the mod's main script and runs it.
 ]]
 
-local main_functions = require("src.main")
+-- require JSX first, as it's a global for JSX scripts
+require("src.include.jsx.index")
+
+-- replaced with the actual entry point
+local main_functions = require("$$FILE$$")
 local script_init = main_functions.init
 local script_tick = main_functions.tick
 local script_update = main_functions.update
